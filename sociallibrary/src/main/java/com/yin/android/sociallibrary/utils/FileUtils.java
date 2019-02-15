@@ -64,7 +64,7 @@ public class FileUtils {
    * Rename the file.
    *
    * @param filePath The path of file.
-   * @param newName  The new name of file.
+   * @param newName The new name of file.
    * @return {@code true}: success<br>{@code false}: fail
    */
   public static boolean rename(final String filePath, final String newName) {
@@ -74,7 +74,7 @@ public class FileUtils {
   /**
    * Rename the file.
    *
-   * @param file    The file.
+   * @param file The file.
    * @param newName The new name of file.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -213,7 +213,7 @@ public class FileUtils {
   /**
    * Copy the directory.
    *
-   * @param srcDirPath  The path of source directory.
+   * @param srcDirPath The path of source directory.
    * @param destDirPath The path of destination directory.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -225,9 +225,9 @@ public class FileUtils {
   /**
    * Copy the directory.
    *
-   * @param srcDirPath  The path of source directory.
+   * @param srcDirPath The path of source directory.
    * @param destDirPath The path of destination directory.
-   * @param listener    The replace listener.
+   * @param listener The replace listener.
    * @return {@code true}: success<br>{@code false}: fail
    */
   public static boolean copyDir(final String srcDirPath,
@@ -239,7 +239,7 @@ public class FileUtils {
   /**
    * Copy the directory.
    *
-   * @param srcDir  The source directory.
+   * @param srcDir The source directory.
    * @param destDir The destination directory.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -251,8 +251,8 @@ public class FileUtils {
   /**
    * Copy the directory.
    *
-   * @param srcDir   The source directory.
-   * @param destDir  The destination directory.
+   * @param srcDir The source directory.
+   * @param destDir The destination directory.
    * @param listener The replace listener.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -265,7 +265,7 @@ public class FileUtils {
   /**
    * Copy the file.
    *
-   * @param srcFilePath  The path of source file.
+   * @param srcFilePath The path of source file.
    * @param destFilePath The path of destination file.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -277,9 +277,9 @@ public class FileUtils {
   /**
    * Copy the file.
    *
-   * @param srcFilePath  The path of source file.
+   * @param srcFilePath The path of source file.
    * @param destFilePath The path of destination file.
-   * @param listener     The replace listener.
+   * @param listener The replace listener.
    * @return {@code true}: success<br>{@code false}: fail
    */
   public static boolean copyFile(final String srcFilePath,
@@ -291,7 +291,7 @@ public class FileUtils {
   /**
    * Copy the file.
    *
-   * @param srcFile  The source file.
+   * @param srcFile The source file.
    * @param destFile The destination file.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -303,7 +303,7 @@ public class FileUtils {
   /**
    * Copy the file.
    *
-   * @param srcFile  The source file.
+   * @param srcFile The source file.
    * @param destFile The destination file.
    * @param listener The replace listener.
    * @return {@code true}: success<br>{@code false}: fail
@@ -317,7 +317,7 @@ public class FileUtils {
   /**
    * Move the directory.
    *
-   * @param srcDirPath  The path of source directory.
+   * @param srcDirPath The path of source directory.
    * @param destDirPath The path of destination directory.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -329,9 +329,9 @@ public class FileUtils {
   /**
    * Move the directory.
    *
-   * @param srcDirPath  The path of source directory.
+   * @param srcDirPath The path of source directory.
    * @param destDirPath The path of destination directory.
-   * @param listener    The replace listener.
+   * @param listener The replace listener.
    * @return {@code true}: success<br>{@code false}: fail
    */
   public static boolean moveDir(final String srcDirPath,
@@ -343,7 +343,7 @@ public class FileUtils {
   /**
    * Move the directory.
    *
-   * @param srcDir  The source directory.
+   * @param srcDir The source directory.
    * @param destDir The destination directory.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -355,8 +355,8 @@ public class FileUtils {
   /**
    * Move the directory.
    *
-   * @param srcDir   The source directory.
-   * @param destDir  The destination directory.
+   * @param srcDir The source directory.
+   * @param destDir The destination directory.
    * @param listener The replace listener.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -369,7 +369,7 @@ public class FileUtils {
   /**
    * Move the file.
    *
-   * @param srcFilePath  The path of source file.
+   * @param srcFilePath The path of source file.
    * @param destFilePath The path of destination file.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -381,9 +381,9 @@ public class FileUtils {
   /**
    * Move the file.
    *
-   * @param srcFilePath  The path of source file.
+   * @param srcFilePath The path of source file.
    * @param destFilePath The path of destination file.
-   * @param listener     The replace listener.
+   * @param listener The replace listener.
    * @return {@code true}: success<br>{@code false}: fail
    */
   public static boolean moveFile(final String srcFilePath,
@@ -395,7 +395,7 @@ public class FileUtils {
   /**
    * Move the file.
    *
-   * @param srcFile  The source file.
+   * @param srcFile The source file.
    * @param destFile The destination file.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -407,7 +407,7 @@ public class FileUtils {
   /**
    * Move the file.
    *
-   * @param srcFile  The source file.
+   * @param srcFile The source file.
    * @param destFile The destination file.
    * @param listener The replace listener.
    * @return {@code true}: success<br>{@code false}: fail
@@ -609,7 +609,7 @@ public class FileUtils {
    * Delete all files that satisfy the filter in directory.
    *
    * @param dirPath The path of directory.
-   * @param filter  The filter.
+   * @param filter The filter.
    * @return {@code true}: success<br>{@code false}: fail
    */
   public static boolean deleteFilesInDirWithFilter(final String dirPath,
@@ -620,7 +620,7 @@ public class FileUtils {
   /**
    * Delete all files that satisfy the filter in directory.
    *
-   * @param dir    The directory.
+   * @param dir The directory.
    * @param filter The filter.
    * @return {@code true}: success<br>{@code false}: fail
    */
@@ -670,7 +670,7 @@ public class FileUtils {
   /**
    * Return the files in directory.
    *
-   * @param dirPath     The path of directory.
+   * @param dirPath The path of directory.
    * @param isRecursive True to traverse subdirectories, false otherwise.
    * @return the files in directory
    */
@@ -681,7 +681,7 @@ public class FileUtils {
   /**
    * Return the files in directory.
    *
-   * @param dir         The directory.
+   * @param dir The directory.
    * @param isRecursive True to traverse subdirectories, false otherwise.
    * @return the files in directory
    */
@@ -699,7 +699,7 @@ public class FileUtils {
    * <p>Doesn't traverse subdirectories</p>
    *
    * @param dirPath The path of directory.
-   * @param filter  The filter.
+   * @param filter The filter.
    * @return the files that satisfy the filter in directory
    */
   public static List<File> listFilesInDirWithFilter(final String dirPath,
@@ -711,7 +711,7 @@ public class FileUtils {
    * Return the files that satisfy the filter in directory.
    * <p>Doesn't traverse subdirectories</p>
    *
-   * @param dir    The directory.
+   * @param dir The directory.
    * @param filter The filter.
    * @return the files that satisfy the filter in directory
    */
@@ -723,8 +723,8 @@ public class FileUtils {
   /**
    * Return the files that satisfy the filter in directory.
    *
-   * @param dirPath     The path of directory.
-   * @param filter      The filter.
+   * @param dirPath The path of directory.
+   * @param filter The filter.
    * @param isRecursive True to traverse subdirectories, false otherwise.
    * @return the files that satisfy the filter in directory
    */
@@ -737,8 +737,8 @@ public class FileUtils {
   /**
    * Return the files that satisfy the filter in directory.
    *
-   * @param dir         The directory.
-   * @param filter      The filter.
+   * @param dir The directory.
+   * @param filter The filter.
    * @param isRecursive True to traverse subdirectories, false otherwise.
    * @return the files that satisfy the filter in directory
    */
@@ -1159,7 +1159,7 @@ public class FileUtils {
   ///////////////////////////////////////////////////////////////////////////
 
   private static final char[] HEX_DIGITS =
-      {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+      { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 
   private static String bytes2HexString(final byte[] bytes) {
     if (bytes == null) return "";

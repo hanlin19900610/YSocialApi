@@ -10,14 +10,7 @@ import java.io.File;
  * @date : 2018/8/25 15:13
  */
 public class FilePathUtils {
-  /**
-   * 公司文件夹名称
-   */
-  private static final String COMPANY_FOLDER = "aimyunion";
-  /**
-   * APP文件夹名称
-   */
-  private static final String APP_FOLDER = "aimymusic";
+
   /**
    * 图片
    */
@@ -28,10 +21,6 @@ public class FilePathUtils {
    */
   public static String getAppPath(Context context) {
     return (SDCardUtils.isSDCardEnable() ? (SDCardUtils.getSDCardPaths().get(0) + File.separator)
-        : context.getCacheDir().getPath() + File.separator)
-        + COMPANY_FOLDER
-        + File.separator
-        + APP_FOLDER
-        + File.separator;
+        : context.getCacheDir().getPath() + File.separator);
   }
 }
