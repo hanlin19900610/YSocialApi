@@ -2,7 +2,6 @@ package com.yin.android.sociallibrary.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
-import android.content.Context;
 import android.support.annotation.NonNull;
 import java.lang.reflect.InvocationTargetException;
 
@@ -13,16 +12,6 @@ public final class Utils {
 
   private Utils() {
     throw new UnsupportedOperationException("u can't instantiate me...");
-  }
-
-  /**
-   * Init utils.
-   * <p>Init it in the class of Application.</p>
-   *
-   * @param context context
-   */
-  public static void init(@NonNull final Context context) {
-    init((Application) context.getApplicationContext());
   }
 
   /**
