@@ -60,18 +60,14 @@ public class SinaWBHandler extends SSOHandler {
   @Override
   public void onCreate(Context context, PlatformConfig.Platform config) {
     this.mConfig = (PlatformConfig.SinaWB) config;
-    /**
-     * TODO 这个参数必须传值 考虑到动态会改变
-     */
-    if (null == mConfig || null == mConfig.appKey) {
+    if (null == mConfig || null == mConfig.appKey || null == mConfig.callBackUrl) {
       Log.e("SinaWBHandler", "sina key");
       return;
     }
-    String weiBoCallBackUrl = "";
     // 初始化微博服务
     WbSdk.install(context,
         new AuthInfo(context, mConfig.appKey,
-            weiBoCallBackUrl,
+            mConfig.callBackUrl,
             SCOPE));
     initShareLister();
   }

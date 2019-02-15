@@ -152,7 +152,6 @@ public class QQHandler extends SSOHandler {
       url = shareVideoMedia.getVideoUrl();
     } else if (shareMedia instanceof ShareTextImageMedia) {
       ShareTextImageMedia shareTextImageMedia = (ShareTextImageMedia) shareMedia;
-      shareType = QQShare.SHARE_TO_QQ_TYPE_DEFAULT;
       bitmap = shareTextImageMedia.getThumb();
       shareType = QQShare.SHARE_TO_QQ_TYPE_DEFAULT;
       title = shareTextImageMedia.getTitle();
@@ -172,11 +171,11 @@ public class QQHandler extends SSOHandler {
       params.putString(QQShare.SHARE_TO_QQ_TARGET_URL, url);
     }
     if (this.mConfig.getName() == PlatformType.QZONE) {
-      ArrayList<String> path_arr = new ArrayList<>();
-      path_arr.add(imagePath);
+      ArrayList<String> pathArr = new ArrayList<>();
+      pathArr.add(imagePath);
       //!这里是大坑 不能用SHARE_TO_QQ_IMAGE_LOCAL_URL
       params.putStringArrayList(QzoneShare.SHARE_TO_QQ_IMAGE_URL,
-          path_arr);
+          pathArr);
       params.putInt(QQShare.SHARE_TO_QQ_EXT_INT, QQShare.SHARE_TO_QQ_FLAG_QZONE_AUTO_OPEN);
       this.mTencent.shareToQzone(activity, params, mIUiListener);
     } else {
@@ -222,7 +221,9 @@ public class QQHandler extends SSOHandler {
     Tencent.onActivityResultData(requestCode, resultCode, data, null);
   }
 
-  //要初始化open_id和token
+  /**
+   * 要初始化open_id和token
+   */
   private void initOpenidAndToken(JSONObject jsonObject) {
     try {
       String token = jsonObject.getString(com.tencent.connect.common.Constants.PARAM_ACCESS_TOKEN);
@@ -232,7 +233,7 @@ public class QQHandler extends SSOHandler {
       mTencent.setAccessToken(token, expires);
       mTencent.setOpenId(openId);
     } catch (Exception e) {
-      e.getMessage();
+      e.printStackTrace();
     }
   }
 

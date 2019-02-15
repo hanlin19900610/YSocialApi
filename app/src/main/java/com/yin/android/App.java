@@ -14,7 +14,9 @@ public class App extends Application {
   @Override public void onCreate() {
     super.onCreate();
     Utils.init(this);
-    SocialApi.getSocialApi().init(this,null,"1106524213",null,null);
-
+    SocialApi.getSocialApi().initAliPAy(null);
+    SocialApi.getSocialApi().initQQ(this, "1106524213");
+    SocialApi.getSocialApi().initWBKey(null, null);
+    SocialApi.getSocialApi().initWeChatKey(this, null);
   }
 }

@@ -50,38 +50,55 @@ public class SocialApi {
     this.authToken = authToken;
   }
 
-  private void onInit(Application application, String weChatKey, String qqKey, String sInaWBKEy,
-      String aliKey) {
-    if (!TextUtils.isEmpty(weChatKey)) {
-      PlatformConfig.setWeixin(weChatKey);
-      mWeChat = WXAPIFactory.createWXAPI(application, weChatKey, true);
-      mWeChat.registerApp(weChatKey);
-    }
-    if (!TextUtils.isEmpty(qqKey)) {
-      PlatformConfig.setQQ(qqKey);
-      // 必须 写此方法 否则会导致使用崩溃
-      mTenCent = Tencent.createInstance(qqKey, application.getApplicationContext());
-    }
-    if (!TextUtils.isEmpty(sInaWBKEy)) {
-      PlatformConfig.setSinaWB(sInaWBKEy);
-    }
+  /**
+   * 初始化支付宝sdk
+   *
+   * @param aliKey 支付宝key
+   */
+  public void initAliPAy(String aliKey) {
     if (!TextUtils.isEmpty(aliKey)) {
       PlatformConfig.setAli(aliKey);
     }
   }
 
   /**
-   * 注册三方sdk
+   * 初始化微博sdk
    *
-   * @param application 全局context
-   * @param weChatKey 微信key
-   * @param qqKey qq key
-   * @param sInaWBKEy 新浪 key
-   * @param aliKey 支付宝key
+   * @param sInaWBKEy 微博key
+   * @param callBackUrl 微博回调地址
    */
-  public void init(Application application, String weChatKey, String qqKey, String sInaWBKEy,
-      String aliKey) {
-    getSocialApi().onInit(application, weChatKey, qqKey, sInaWBKEy, aliKey);
+  public void initWBKey(String sInaWBKEy, String callBackUrl) {
+    if (!TextUtils.isEmpty(sInaWBKEy)) {
+      PlatformConfig.setSinaWB(sInaWBKEy, callBackUrl);
+    }
+  }
+
+  /**
+   * 初始化微信key
+   *
+   * @param application 上下文
+   * @param weChatKey 微信key
+   */
+  public void initWeChatKey(Application application, String weChatKey) {
+    if (!TextUtils.isEmpty(weChatKey)) {
+      PlatformConfig.setWeixin(weChatKey);
+      mWeChat = WXAPIFactory.createWXAPI(application, weChatKey, true);
+      mWeChat.registerApp(weChatKey);
+    }
+  }
+
+  /**
+   * 初始化微信key
+   *
+   * @param application 上下文
+   * @param qqKey qqKey
+   */
+  public void initQQ(Application application, String qqKey) {
+    if (!TextUtils.isEmpty(qqKey)) {
+      PlatformConfig.setQQ(qqKey);
+      // 必须 写此方法 否则会导致使用崩溃
+      mTenCent = Tencent.createInstance(qqKey, application.getApplicationContext());
+    }
   }
 
   /**

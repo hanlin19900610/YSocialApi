@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class PlatformConfig {
 
-  public static Map<PlatformType, Platform> configs = new HashMap();
+  public static Map<PlatformType, Platform> configs = new HashMap<PlatformType, Platform>();
 
   static {
     configs.put(PlatformType.WEIXIN, new Weixin(PlatformType.WEIXIN));
@@ -26,7 +26,9 @@ public class PlatformConfig {
     PlatformType getName();
   }
 
-  //微信
+  /**
+   * 微信
+   */
   public static class Weixin implements Platform {
     private final PlatformType media;
     String appId = null;
@@ -43,12 +45,16 @@ public class PlatformConfig {
   /**
    * 设置微信配置信息
    */
-  public static void setWeixin(String appId) {
+  static void setWeixin(String appId) {
     Weixin weixin = (Weixin) configs.get(PlatformType.WEIXIN);
-    weixin.appId = appId;
+    if (weixin != null) {
+      weixin.appId = appId;
+    }
 
     Weixin weiringCircle = (Weixin) configs.get(PlatformType.WEIXIN_CIRCLE);
-    weiringCircle.appId = appId;
+    if (weiringCircle != null) {
+      weiringCircle.appId = appId;
+    }
   }
 
   //微信
@@ -68,21 +74,23 @@ public class PlatformConfig {
   /**
    * 设置微信配置信息
    */
-  public static void setAli(String appId) {
+  static void setAli(String appId) {
     Ali ali = (Ali) configs.get(PlatformType.ALI);
-    ali.appId = appId;
+    if (ali != null) {
+      ali.appId = appId;
+    }
   }
 
   //qq
   public static class QQ implements Platform {
     private final PlatformType media;
-    public String appId = null;
+    String appId = null;
 
     @Override public PlatformType getName() {
       return this.media;
     }
 
-    public QQ(PlatformType type) {
+    QQ(PlatformType type) {
       this.media = type;
     }
   }
@@ -90,12 +98,16 @@ public class PlatformConfig {
   /**
    * 设置qq配置信息
    */
-  public static void setQQ(String appId) {
+  static void setQQ(String appId) {
     QQ qq = (QQ) configs.get(PlatformType.QQ);
-    qq.appId = appId;
+    if (qq != null) {
+      qq.appId = appId;
+    }
 
-    QQ qzone = (QQ) configs.get(PlatformType.QZONE);
-    qzone.appId = appId;
+    QQ qZone = (QQ) configs.get(PlatformType.QZONE);
+    if (qZone != null) {
+      qZone.appId = appId;
+    }
   }
 
   /**
@@ -104,12 +116,13 @@ public class PlatformConfig {
   public static class SinaWB implements Platform {
     private final PlatformType media;
     public String appKey = null;
+    public String callBackUrl = null;
 
     @Override public PlatformType getName() {
       return this.media;
     }
 
-    public SinaWB(PlatformType type) {
+    SinaWB(PlatformType type) {
       this.media = type;
     }
   }
@@ -117,9 +130,12 @@ public class PlatformConfig {
   /**
    * 设置新浪微博配置信息
    */
-  public static void setSinaWB(String appKey) {
+  static void setSinaWB(String appKey, String callBackUrl) {
     SinaWB sinaWB = (SinaWB) configs.get(PlatformType.SINA_WB);
-    sinaWB.appKey = appKey;
+    if (sinaWB != null) {
+      sinaWB.appKey = appKey;
+      sinaWB.callBackUrl = callBackUrl;
+    }
   }
 
   public static Platform getPlatformConfig(PlatformType platformType) {
