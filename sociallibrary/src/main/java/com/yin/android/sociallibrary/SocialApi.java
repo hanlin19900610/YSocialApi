@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.text.TextUtils;
-import android.util.Log;
 import com.tencent.connect.auth.AuthAgent;
 import com.tencent.connect.common.UIListenerManager;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
@@ -184,10 +183,6 @@ public class SocialApi {
    */
   public void doPayment(Activity activity, PlatformType platformType, PayBean shareMedia,
       PayListener payListener) {
-    if (platformType != PlatformType.WEIXIN || platformType != PlatformType.ALI) {
-      Log.e("socialApi", "支付方式只支持微信和支付宝");
-      return;
-    }
     SSOHandler ssoHandler = getSSOHandler(platformType);
     ssoHandler.onCreate(Utils.getApp(), PlatformConfig.getPlatformConfig(platformType));
     ssoHandler.pay(activity, shareMedia, payListener);

@@ -103,6 +103,10 @@ public class WXHandler extends SSOHandler {
 
   @Override
   public boolean isInstall() {
+    if (this.mWXApi == null) {
+      Log.e("socialApi", "请检查key 是否有效");
+      return false;
+    }
     return this.mWXApi.isWXAppInstalled();
   }
 
