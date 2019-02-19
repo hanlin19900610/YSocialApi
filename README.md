@@ -14,5 +14,5 @@
 <td><img src=https://github.com/apiosource/YSocialApi/blob/master/image/Screenshot_20190218-114825_QQ.jpg border=0></td>
 </table>
 #### 技术群
-* 群: 118116509
+群: 118116509
 
