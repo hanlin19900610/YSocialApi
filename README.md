@@ -1,5 +1,9 @@
 <center><h2>居中测试文本</h2></center>
 ___
+<figure class="half">
+    <img src="http://xxx.jpg">
+    <img src="http://yyy.jpg">
+</figure>
 
 <table>
 <td><img src=https://github.com/apiosource/YSocialApi/blob/master/image/Screenshot_20190218-114814_Alipay.jpg border=0></td>
