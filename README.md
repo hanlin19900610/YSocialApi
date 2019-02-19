@@ -1,13 +1,20 @@
 <center><h2>居中测试文本</h2></center>
 ___
-<figure class="half">
-    <img src="http://xxx.jpg">
-    <img src="http://yyy.jpg">
-</figure>
+
+##现支持功能
+- [x] qq分享
+- [x] 微信分享
+- [x] qq登录
+- [x] 微信登录
+- [x] 支付宝登录
+- [x] 微博登录
+- [x] 支付宝支付
+- [x] 微信支付
 
 <table>
 <td><img src=https://github.com/apiosource/YSocialApi/blob/master/image/Screenshot_20190218-114814_Alipay.jpg border=0></td>
-<td><img src=https://github.com/apiosource/YSocialApi/blob/master/image/Screenshot_20190218-114825_QQ.jpg border=0></td></table>
+<td><img src=https://github.com/apiosource/YSocialApi/blob/master/image/Screenshot_20190218-114825_QQ.jpg border=0></td>
+</table>
 ##MaHua是什么?
 一个在线编辑markdown文档的编辑器
 
