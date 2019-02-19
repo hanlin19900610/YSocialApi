@@ -1,10 +1,9 @@
 <center><h2>居中测试文本</h2></center>
 ___
 
-<table><tr>
+<table>
 <td><img src=https://github.com/apiosource/YSocialApi/blob/master/image/Screenshot_20190218-114814_Alipay.jpg border=0></td>
-<td><img src=https://github.com/apiosource/YSocialApi/blob/master/image/Screenshot_20190218-114825_QQ.jpg border=0></td>
-</tr></table>
+<td><img src=https://github.com/apiosource/YSocialApi/blob/master/image/Screenshot_20190218-114825_QQ.jpg border=0></td></table>
 ##MaHua是什么?
 一个在线编辑markdown文档的编辑器
 
