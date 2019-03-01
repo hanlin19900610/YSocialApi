@@ -12,6 +12,10 @@ buildscript {
     classpath 'com.android.tools.build:gradle:3.1.4'
     //butterKnife
     classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
+    // 添加下面两行代码即可。
+//    classpath 'com.novoda:bintray-release:0.5.0'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
 
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
@@ -25,7 +29,13 @@ allprojects {
     maven { url "https://jitpack.io" }
     maven { url "https://dl.bintray.com/thelasterstar/maven/" }
     maven { url 'https://maven.google.com' }
-
+  }
+  //加上这些
+  tasks.withType(Javadoc) {
+    options{ encoding "UTF-8"
+      charSet 'UTF-8'
+      links "http://docs.oracle.com/javase/7/docs/api"
+    }
   }
 }
 
