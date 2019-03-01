@@ -1,4 +1,7 @@
 # 第三方分享支付集成
+
+以后再也不用导lib了
+   implementation 'com.yzy:sociallibrary:1.0.2'
 ## 现支持功能
 - [x] qq分享
 - [x] 微信分享
