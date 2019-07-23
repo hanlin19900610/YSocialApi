@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:id="@+id/btn_wb_share_text"
+      android:text="文字图片分享"/>
+
+  <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:id="@+id/btn_wb_share_img"
+      android:text="图片分享"/>
+  <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:id="@+id/btn_wb_share_web"
+      android:text="网页分享"/>
+
+  <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:id="@+id/btn_wb_share_video"
+      android:text="视频分享"/>
+
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/btn_wb_auth"
+      android:text="登录"/>
+
+</LinearLayout>

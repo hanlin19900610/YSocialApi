@@ -1,27 +1,22 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 //// 这里添加下面两行代码。
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 android {
-  compileSdkVersion 28
+  compileSdkVersion 29
   defaultConfig {
-    minSdkVersion 15
-    targetSdkVersion 28
+    minSdkVersion 21
+    targetSdkVersion 29
     versionCode 1
     versionName "1.0"
   }
-  sourceSets {
-    main {
-      jniLibs.srcDir 'jniLibs'
-    }
-  }
-
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-    }
-  }
+//  sourceSets {
+//    main {
+//      jniLibs.srcDir 'jniLibs'
+//    }
+//  }
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
@@ -35,8 +30,9 @@ android {
 dependencies {
   api fileTree(dir: 'libs', include: ['*.jar'])
   api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.1.6'
-  implementation 'com.sina.weibo.sdk:core:4.2.7:openDefaultRelease@aar'
-  implementation 'com.android.support:appcompat-v7:27.1.1'
+  implementation 'com.sina.weibo.sdk:core:4.4.0:openDefaultRelease@aar'
+  implementation 'androidx.appcompat:appcompat:1.0.2'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 // 项目引用的版本号，比如compile 'com.yanzhenjie:andserver:1.0.1'中的1.0.1就是这里配置的。
 version = "1.0.2"
@@ -129,6 +125,9 @@ bintray {
     licenses = ["Apache-2.0"]
     publish = true // 是否是公开项目。
   }
+}
+repositories {
+  mavenCentral()
 }
 
 ///** 以下开始是将Android Library上传到jcenter的相关配置**/

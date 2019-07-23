@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/btn_qq_auth"
+      android:text="qq登录"/>
+  <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:id="@+id/btn_qq_share_text"
+      android:text="文字图片分享"/>
+
+  <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:id="@+id/btn_qq_share_img"
+      android:text="图片分享"/>
+  <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:id="@+id/btn_qq_share_music"
+      android:text="音乐分享"/>
+  <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:id="@+id/btn_qq_share_video"
+      android:text="视频分享"/>
+  <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:id="@+id/btn_qq_share_web"
+      android:text="网页分享"/>
+
+  <CheckBox
+      android:id="@+id/btn_qq_share2zone"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="分享到空间？"
+      />
+
+  <!--<Button-->
+      <!--android:layout_width="wrap_content"-->
+      <!--android:layout_height="wrap_content"-->
+      <!--android:id="@+id/btn_qq_share"-->
+      <!--android:text="qq分享"/>-->
+  <!--<Button-->
+      <!--android:layout_width="wrap_content"-->
+      <!--android:layout_height="wrap_content"-->
+      <!--android:id="@+id/btn_qq_zone_share"-->
+      <!--android:text="qq空间分享"/>-->
+
+</LinearLayout>
