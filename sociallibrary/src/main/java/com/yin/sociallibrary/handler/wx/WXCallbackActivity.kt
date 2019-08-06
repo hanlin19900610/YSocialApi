@@ -18,7 +18,6 @@ import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler
 class WXCallbackActivity : Activity(), IWXAPIEventHandler {
 
   private lateinit var mWXHandler: WXHandler
-  private lateinit var mWXCircleHandler: WXHandler
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -39,8 +38,7 @@ class WXCallbackActivity : Activity(), IWXAPIEventHandler {
   override fun onResp(resp: BaseResp?) {
     if (resp != null) {
       try {
-        mWXHandler.wxEventHandler.onResp(resp)
-        mWXCircleHandler.wxEventHandler.onResp(resp)
+        mWXHandler.callbackWXEventHandler(resp)
       } catch (var3: Exception) {
       }
 
@@ -50,7 +48,6 @@ class WXCallbackActivity : Activity(), IWXAPIEventHandler {
   }
 
   override fun onReq(req: BaseReq?) {
-    mWXHandler.wxEventHandler.onReq(req)
 
     this.finish()
     overridePendingTransition(0, 0)
@@ -58,13 +55,12 @@ class WXCallbackActivity : Activity(), IWXAPIEventHandler {
 
   private fun initAndPerformIntent() {
 
-    if (PlatformManager.currentHandler == null){
+    if (PlatformManager.currentHandler == null) {
       finish()
     }
 
     PlatformManager.currentHandler?.let {
-      mWXCircleHandler = it as WXHandler
-      mWXHandler = it
+      mWXHandler = it as WXHandler
       mWXHandler.wxAPI?.handleIntent(intent, this)
     }
   }

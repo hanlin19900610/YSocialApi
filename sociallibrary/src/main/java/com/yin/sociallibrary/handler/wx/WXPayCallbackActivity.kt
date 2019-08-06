@@ -23,8 +23,8 @@ class WXPayCallbackActivity : Activity(), IWXAPIEventHandler {
     super.onCreate(savedInstanceState)
     requestWindowFeature(Window.FEATURE_NO_TITLE)
     window.setFlags(
-        WindowManager.LayoutParams.FLAG_FULLSCREEN,
-        WindowManager.LayoutParams.FLAG_FULLSCREEN
+      WindowManager.LayoutParams.FLAG_FULLSCREEN,
+      WindowManager.LayoutParams.FLAG_FULLSCREEN
     )
 
     initAndPerformIntent()
@@ -38,7 +38,7 @@ class WXPayCallbackActivity : Activity(), IWXAPIEventHandler {
   override fun onResp(resp: BaseResp?) {
     if (resp != null) {
       try {
-        mWXHandler.wxEventHandler.onResp(resp)
+        mWXHandler.callbackWXEventHandler(resp)
       } catch (var3: Exception) {
       }
 
@@ -48,8 +48,6 @@ class WXPayCallbackActivity : Activity(), IWXAPIEventHandler {
   }
 
   override fun onReq(req: BaseReq?) {
-    mWXHandler.wxEventHandler.onReq(req)
-
     this.finish()
     overridePendingTransition(0, 0)
   }

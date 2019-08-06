@@ -52,33 +52,23 @@ class WXHandler(context: Context, config: PlatformConfig) : SSOHandler() {
 
     var wxAPI: IWXAPI? = WXAPIFactory.createWXAPI(context, config.appkey, true)
         private set
-    var wxEventHandler: IWXAPIEventHandler
-        private set
 
-
+    fun callbackWXEventHandler(resp: BaseResp?) {
+        when (resp?.type ?: -1) {
+            //授权返回
+            ConstantsAPI.COMMAND_SENDAUTH -> this@WXHandler.onAuthCallback(resp as SendAuth.Resp)
+            //分享返回
+            ConstantsAPI.COMMAND_SENDMESSAGE_TO_WX ->
+                this@WXHandler.onShareCallback(resp as SendMessageToWX.Resp)
+            //支付返回
+            ConstantsAPI.COMMAND_PAY_BY_WX -> this@WXHandler.onPayCallback(resp as PayResp)
+            else -> {
+                Log.e("Social", "$TAG : wxEventHandler 回调为null")
+            }
+        }
+    }
     init {
         wxAPI?.registerApp(config.appkey)
-        wxEventHandler = object : IWXAPIEventHandler {
-            override fun onResp(resp: BaseResp?) {
-                val type = resp?.type ?: -1
-                when (type) {
-                    //授权返回
-                    ConstantsAPI.COMMAND_SENDAUTH -> this@WXHandler.onAuthCallback(resp as SendAuth.Resp)
-                    //分享返回
-                    ConstantsAPI.COMMAND_SENDMESSAGE_TO_WX ->
-                        this@WXHandler.onShareCallback(resp as SendMessageToWX.Resp)
-                    //支付返回
-                    ConstantsAPI.COMMAND_PAY_BY_WX -> this@WXHandler.onPayCallback(resp as PayResp)
-                    else -> {
-                        Log.e("Social", "$TAG : wxEventHandler 回调为null")
-                    }
-                }
-            }
-
-            override fun onReq(p0: BaseReq?) {
-            }
-
-        }
     }
 
     override val isInstalled: Boolean
