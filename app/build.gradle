@@ -5,17 +5,11 @@ apply plugin: 'kotlin-kapt'
 android {
   compileSdkVersion 29
   defaultConfig {
-    applicationId "com.yin.android"
+    applicationId "com.ttff.ms"
     minSdkVersion 21
     targetSdkVersion 29
     versionCode 1
     versionName "1.0"
-  }
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-    }
   }
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
@@ -26,6 +20,30 @@ android {
     // Or, if you prefer, you can continue to check for errors in release builds,
     // but continue the build even when errors are found:
     abortOnError false
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      multiDexEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.debug
+    }
+    debug {
+      minifyEnabled false
+      multiDexEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.debug
+    }
+  }
+
+  signingConfigs {
+    debug {
+      storeFile file('ttff.jks')
+      storePassword "ttff2019"
+      keyAlias "miaoshan"
+      keyPassword "miaoshan2019"
+    }
   }
 
 }

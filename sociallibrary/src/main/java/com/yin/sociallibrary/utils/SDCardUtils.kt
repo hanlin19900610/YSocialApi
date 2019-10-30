@@ -21,8 +21,8 @@ object SDCardUtils {
         try {
             val getVolumePathsMethod = StorageManager::class.java.getMethod("getVolumePaths")
             getVolumePathsMethod.isAccessible = true
-            val invoke: MutableList<*> =
-                getVolumePathsMethod.invoke(storageManager) as MutableList<*>
+            val invoke: Array<*> =
+                getVolumePathsMethod.invoke(storageManager) as Array<*>
 
             for (any in invoke) {
                 paths.add(any as String)

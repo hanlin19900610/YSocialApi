@@ -10,8 +10,8 @@ import com.yin.sociallibrary.callback.ShareCallback
 import com.yin.sociallibrary.config.OperationType
 import com.yin.sociallibrary.config.PlatformType
 import com.yin.sociallibrary.config.SocialConstants
-import com.yin.sociallibrary.entity.content.*
 import com.yin.sociallibrary.entity.OperationBean
+import com.yin.sociallibrary.entity.content.*
 import com.yin.sociallibrary.entity.platform.PlatformConfig
 
 /**
@@ -89,6 +89,7 @@ object Social {
     textImgUrl: String? = null,
     description: String? = null,
     atUser: String? = null,
+    imageUrl: String? = null,
     onSuccess: ((type: PlatformType) -> Unit)? = null,
     onError: ((type: PlatformType, errorCode: Int, errorMsg: String?) -> Unit)? = null,
     onCancel: ((type: PlatformType) -> Unit)? = null
@@ -104,7 +105,7 @@ object Social {
       }
       // 网页分享
       !webUrl.isNullOrBlank() -> {
-        ShareWebContent(webUrl, title, description, img)
+        ShareWebContent(webUrl, title,imageUrl, description, img)
       }
       // 文本分享
       !textUrl.isNullOrBlank() -> {

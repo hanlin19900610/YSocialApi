@@ -33,7 +33,7 @@
 
         <!-- TODO 修改scheme值-->
         <!--<data android:scheme="tencent1106880993"/>-->
-        <data android:scheme="tencent1111111" />
+        <data android:scheme="tencent1109696928" />
       </intent-filter>
     </activity>
   </application>

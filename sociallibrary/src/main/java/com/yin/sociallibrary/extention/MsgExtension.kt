@@ -1,11 +1,11 @@
 package com.yin.sociallibrary.extention
 
 import android.net.Uri
-import com.yin.sociallibrary.handler.qq.QQHandler
 import com.sina.weibo.sdk.api.*
 import com.tencent.connect.share.QQShare
 import com.tencent.mm.opensdk.modelmsg.*
 import com.yin.sociallibrary.entity.content.*
+import com.yin.sociallibrary.handler.qq.QQHandler
 import com.yin.sociallibrary.utils.BitmapUtils
 import java.io.File
 
@@ -85,6 +85,7 @@ fun QQHandler.ShareParamBean.setWebParam(content: ShareWebContent): QQHandler.Sh
   title = content.title
   description = content.description
   url = content.webPageUrl
+  imageUrl = content.imageUrl
   return this
 }
 

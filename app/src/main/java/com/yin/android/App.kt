@@ -1,10 +1,10 @@
 package com.yin.android
 
 import android.app.Application
+import com.yin.sociallibrary.Social
 import com.yin.sociallibrary.config.PlatformType
 import com.yin.sociallibrary.entity.platform.CommPlatConfigBean
 import com.yin.sociallibrary.entity.platform.SinaPlatConfigBean
-import com.yin.sociallibrary.Social
 
 /**
  * description :
@@ -21,12 +21,12 @@ class App : Application() {
   private fun initSocial() {
     Social.init(
       applicationContext,
-      CommPlatConfigBean(PlatformType.WEIXIN, ""),  // 微信key
-      CommPlatConfigBean(PlatformType.QQ, appkey = ""), // qqkey
+      CommPlatConfigBean(PlatformType.WEIXIN, "wxe83b3af2bb8b0dee"),  // 微信key
+      CommPlatConfigBean(PlatformType.QQ, appkey = "1109696928"), // qqkey
       SinaPlatConfigBean(
         PlatformType.SINA_WEIBO,
-        appkey = "1472835731",
-        redirectUrl = "http://www.meda.cc",
+        appkey = "2822560449",
+        redirectUrl = "https://api.weibo.com/oauth2/default.html",
         scope = (
           "email,direct_messages_read,direct_messages_write,"
             + "friendships_groups_read,friendships_groups_write,statuses_to_me_read,"

@@ -7,6 +7,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.aimymusic.aimysociallib.URL
 import com.yin.sociallibrary.Social
@@ -67,13 +68,15 @@ class WBActivity : AppCompatActivity() {
         webUrl = URL.WEB_URL,
         description = "测试",
         title = "测试",
-        onSuccess = { type ->
-//          toast("$type 分享成功")
-        },
-        onError = { type, code, msg ->
-//          toast("$type:$code == $msg")
-        },
-        onCancel = { _ -> })
+              onSuccess = { type ->
+                  Log.e("TAG", "$type 分享成功")
+              },
+              onError = { type, code, msg ->
+                  Log.e("TAG", "$type:$code == $msg")
+              },
+              onCancel = { _ ->
+                  Log.e("TAG", "取消分享")
+              })
     }
     btn_wb_share_video.setOnClickListener {
      Social.share(this, PlatformType.SINA_WEIBO,

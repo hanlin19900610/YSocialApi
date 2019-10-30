@@ -9,7 +9,7 @@ buildscript {
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.5.0-rc02'
+    classpath 'com.android.tools.build:gradle:3.5.1'
     // 添加下面两行代码即可。
 //    classpath 'com.novoda:bintray-release:0.5.0'
     classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'

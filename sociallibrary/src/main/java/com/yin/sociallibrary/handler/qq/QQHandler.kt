@@ -5,6 +5,12 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
+import com.tencent.connect.share.QQShare
+import com.tencent.connect.share.QzonePublish
+import com.tencent.connect.share.QzoneShare
+import com.tencent.tauth.IUiListener
+import com.tencent.tauth.Tencent
+import com.tencent.tauth.UiError
 import com.yin.sociallibrary.PlatformManager
 import com.yin.sociallibrary.callback.AuthCallback
 import com.yin.sociallibrary.callback.OperationCallback
@@ -12,19 +18,13 @@ import com.yin.sociallibrary.callback.ShareCallback
 import com.yin.sociallibrary.config.OperationType
 import com.yin.sociallibrary.config.PlatformType
 import com.yin.sociallibrary.config.SocialConstants
+import com.yin.sociallibrary.entity.content.*
 import com.yin.sociallibrary.entity.platform.PlatformConfig
+import com.yin.sociallibrary.extention.*
 import com.yin.sociallibrary.handler.SSOHandler
 import com.yin.sociallibrary.utils.AppUtils
-import com.yin.sociallibrary.utils.FilePathUtils
-import com.tencent.connect.share.QQShare
-import com.tencent.connect.share.QzonePublish
-import com.tencent.connect.share.QzoneShare
-import com.tencent.tauth.IUiListener
-import com.tencent.tauth.Tencent
-import com.tencent.tauth.UiError
-import com.yin.sociallibrary.entity.content.*
-import com.yin.sociallibrary.extention.*
 import com.yin.sociallibrary.utils.BitmapUtils
+import com.yin.sociallibrary.utils.FilePathUtils
 import com.yin.sociallibrary.utils.FileUtils
 import org.json.JSONObject
 import java.io.File
@@ -157,7 +157,7 @@ class QQHandler(context: Context, config: PlatformConfig) : SSOHandler() {
       params.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE, QzonePublish.PUBLISH_TO_QZONE_TYPE_PUBLISHMOOD)
       //!这里是大坑 不能用SHARE_TO_QQ_IMAGE_LOCAL_URL
       val pathArr = ArrayList<String>()
-      pathArr.add(imagePath)
+      pathArr.add(paramsBean.imageUrl!!)
       params.putString(QzonePublish.PUBLISH_TO_QZONE_SUMMARY, "")
       params.putStringArrayList(QzoneShare.SHARE_TO_QQ_IMAGE_URL, pathArr)// 图片地址ArrayList
       if (content is ShareWebContent) {
@@ -311,6 +311,7 @@ class QQHandler(context: Context, config: PlatformConfig) : SSOHandler() {
     var title: String? = null,
     var description: String? = null,
     var url: String? = null,
-    var bitmap: Bitmap? = null
+    var bitmap: Bitmap? = null,
+    var imageUrl: String? = null
   )
 }
